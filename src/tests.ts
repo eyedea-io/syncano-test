@@ -9,6 +9,9 @@ declare module 'form-data' {}
 
 const {Core} = S
 let stubbed: SinonStub | null = null
+
+process.env.SYNCANO_TEST_RUN_DIR = 'src'
+process.env.SYNCANO_TEST_RUN_EXT = 'ts'
 const run = SyncanoTest.run as SyncanoTestRun
 
 export const createSyncanoCoreMock = (customMock: DeepPartial<S.Core>) => {
