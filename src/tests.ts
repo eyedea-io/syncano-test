@@ -1,4 +1,5 @@
-import merge from 'lodash/merge'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const merge = require('lodash/merge')
 import * as S from '@syncano/core'
 process.env.SYNCANO_TEST_RUN_DIR = 'src'
 process.env.SYNCANO_TEST_RUN_EXT = 'ts'
