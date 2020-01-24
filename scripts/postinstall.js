@@ -1,7 +1,7 @@
 const fs = require('fs')
 const os = require('os')
 const {resolve} = require('path')
-const appPackagePath = resolve('../../../package.json')
+const appPackagePath = resolve('../../../../package.json')
 
 if (!fs.existsSync(appPackagePath)) process.exit(0)
 
