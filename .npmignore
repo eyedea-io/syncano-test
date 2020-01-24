@@ -1,0 +1,8 @@
+!dist
+.coverage
+jest.config.ts
+src
+test
+.circleci
+tsconfig.json
+tslint.json
