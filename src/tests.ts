@@ -4,8 +4,7 @@ process.env.SYNCANO_TEST_RUN_DIR = 'src'
 process.env.SYNCANO_TEST_RUN_EXT = 'ts'
 import * as SyncanoTest from '@syncano/test'
 import {SinonStub, stub} from 'sinon'
-import {SyncanoTestRun} from './types'
-import {DeepPartial} from 'ts-essentials'
+import {SyncanoTestRun, DeepPartial} from './types'
 
 declare module 'form-data' {}
 
