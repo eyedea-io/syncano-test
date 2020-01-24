@@ -3,11 +3,15 @@ import * as S from '@syncano/core'
 import * as SyncanoTest from '@syncano/test'
 import {SinonStub, stub} from 'sinon'
 import {SyncanoTestRun} from './types'
+import {DeepPartial} from 'ts-essentials'
+
+declare module 'form-data' {}
+
 const {Core} = S
 let stubbed: SinonStub | null = null
 const run = SyncanoTest.run as SyncanoTestRun
 
-export const createSyncanoCoreMock = (customMock: Partial<S.Core>) => {
+export const createSyncanoCoreMock = (customMock: DeepPartial<S.Core>) => {
   if (stubbed) {
     stubbed.restore()
   }
@@ -19,7 +23,7 @@ export const createSyncanoCoreMock = (customMock: Partial<S.Core>) => {
 
     if (customMock.data) {
       // Overwrite syncano.data Proxy with object
-      syncano.data = customMock.data
+      syncano.data = customMock.data as any
     }
 
     return syncano

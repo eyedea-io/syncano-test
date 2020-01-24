@@ -16,9 +16,7 @@
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["es2015", "es2016", "dom"],
-    "declaration": true,
-    "esModuleInterop": true
+    "declaration": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules/**/*", "src/**/*.test.tsx", "test/**/*"]
+  "include": ["src/**/*"]
 }
