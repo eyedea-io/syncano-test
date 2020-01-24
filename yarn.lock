@@ -1006,12 +1006,12 @@
   resolved "https://registry.yarnpkg.com/@syncano/schema/-/schema-0.15.0.tgz#cb1c0535e473b796ce4fa8b30e5e16e38fc46191"
   integrity sha512-UEnqdnNkVYUgTKyqw/tH/zTDNB+nWv64mL4dxtVQs+xaOKaaD8n+2YbeOj0NGXrD0wh3gNAKkiD6LDR/7qu9nw==
 
-"@syncano/test@0.15.1-alpha.33":
-  version "0.15.1-alpha.33"
-  resolved "https://registry.yarnpkg.com/@syncano/test/-/test-0.15.1-alpha.33.tgz#eb65ce1e707df88fff8c58ede75b65a09677b03e"
-  integrity sha512-Xv9HEjLwAorIPwcTwGC9uvIiuJtiAyhSX3Wo4x3IjdSz5mwqm+guMxdQE5lta2Dpyshr26cns8tsj5sx8Lv06A==
+"@syncano/test@0.15.1-alpha.36":
+  version "0.15.1-alpha.36"
+  resolved "https://registry.yarnpkg.com/@syncano/test/-/test-0.15.1-alpha.36.tgz#c379c1b55ddfb591cf8c8251f2da0d094084e19b"
+  integrity sha512-kYuhfDKVNQL1Sil0HXDGdSBp+k1cVccwnyYj++KjWof/3ptUzXGNTBkm4Kl0cAmM1iN+5cUe7qyTidBnRvFxWg==
   dependencies:
-    "@syncano/validate" "0.15.0"
+    "@syncano/validate" "0.15.1-alpha.36+cedd511"
     bluebird "^3.5.3"
     faker "^4.1.0"
     js-yaml "^3.12.0"
@@ -1019,19 +1019,7 @@
     lodash.merge "^4.6.1"
     proxyquire "^2.1.0"
 
-"@syncano/validate@0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@syncano/validate/-/validate-0.15.0.tgz#29b713edcca0428b5e63db7d21646ed6248c4d0a"
-  integrity sha512-U5HawFO+cjqmLhCkFRYQH4mMhhFGBQrDmX2o7zOi0CozHdNpi03xIIg/aRiHJpPhyGXUUwEUzbtgVUoB0uxSLA==
-  dependencies:
-    "@syncano/schema" "0.15.0"
-    ajv "^6.5.5"
-    ajv-error-messages "^1.0.2"
-    ajv-errors "^1.0.0"
-    ajv-keywords "^3.2.0"
-    lodash.isempty "^4.4.0"
-
-"@syncano/validate@0.15.1-alpha.36":
+"@syncano/validate@0.15.1-alpha.36", "@syncano/validate@0.15.1-alpha.36+cedd511":
   version "0.15.1-alpha.36"
   resolved "https://registry.yarnpkg.com/@syncano/validate/-/validate-0.15.1-alpha.36.tgz#1b43e776a218056a4d798458df41dab853365e30"
   integrity sha512-baMHbMW4D/fZv1AbaBAXg8uQQlWrycLi8/aNWnXhQ7hrm+cSFEYb8Y3+3bdMrZgX7f+0TvE1JBuqSkQctqH0NA==
@@ -1264,12 +1252,12 @@ ajv-error-messages@^1.0.2:
   resolved "https://registry.yarnpkg.com/ajv-error-messages/-/ajv-error-messages-1.0.2.tgz#5c28b5de24ada92ae35aaa6690078dcbdc004531"
   integrity sha512-beJIbU4fmm6HoTEK6tAJ+ScbLR3sypJPFGcvLwKSjhjPtizdWzXfMG3OMcGKnKGZZJ66up+EvqJyTYA0T4iuKA==
 
-ajv-errors@^1.0.0, ajv-errors@^1.0.1:
+ajv-errors@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ajv-errors/-/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"
   integrity sha512-DCRfO/4nQ+89p/RK43i8Ezd41EqdGIU4ld7nGF8OQ14oc/we5rEntLCUa7+jrn3nn83BosfwZA0wb4pon2o8iQ==
 
-ajv-keywords@^3.2.0, ajv-keywords@^3.4.1:
+ajv-keywords@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.4.1.tgz#ef916e271c64ac12171fd8384eaae6b2345854da"
   integrity sha512-RO1ibKvd27e6FEShVFfPALuHI3WjSVNeK5FIsmme/LYRNxjKuNj+Dt7bucLa6NdSv3JcVTyMlm9kGR84z1XpaQ==

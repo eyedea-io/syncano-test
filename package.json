@@ -39,7 +39,7 @@
     "@babel/core": "7.8.3",
     "@babel/preset-env": "7.8.3",
     "@babel/preset-typescript": "7.8.3",
-    "@syncano/test": "0.15.1-alpha.33",
+    "@syncano/test": "0.15.1-alpha.36",
     "@types/bluebird": "3.5.29",
     "@types/jest": "24.9.1",
     "@types/sinon": "7.5.1",
