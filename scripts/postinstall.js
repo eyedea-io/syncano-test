@@ -3,7 +3,7 @@ const os = require('os')
 const {resolve} = require('path')
 const appPackage = require(resolve('package.json'))
 
-if (appPackage) {
+if (appPackage && appPackage.name !== '@eyedea/syncano-test') {
   if (
     !appPackage.scripts ||
     !appPackage.scripts.test ||

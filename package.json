@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "@eyedea/syncano": "0.9.1-alpha.1",
+    "@types/lodash": "4.14.149",
     "@types/node": "13.5.0",
     "@types/node-fetch": "2.5.4",
     "@typescript-eslint/eslint-plugin": "2.17.0",

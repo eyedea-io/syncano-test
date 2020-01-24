@@ -1,4 +1,4 @@
-const merge = require('lodash/merge')
+import merge from 'lodash/merge'
 import * as S from '@syncano/core'
 import * as SyncanoTest from '@syncano/test'
 import {SinonStub, stub} from 'sinon'
