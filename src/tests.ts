@@ -1,5 +1,7 @@
 import merge from 'lodash/merge'
 import * as S from '@syncano/core'
+process.env.SYNCANO_TEST_RUN_DIR = 'src'
+process.env.SYNCANO_TEST_RUN_EXT = 'ts'
 import * as SyncanoTest from '@syncano/test'
 import {SinonStub, stub} from 'sinon'
 import {SyncanoTestRun} from './types'
@@ -10,8 +12,6 @@ declare module 'form-data' {}
 const {Core} = S
 let stubbed: SinonStub | null = null
 
-process.env.SYNCANO_TEST_RUN_DIR = 'src'
-process.env.SYNCANO_TEST_RUN_EXT = 'ts'
 const run = SyncanoTest.run as SyncanoTestRun
 
 export const createSyncanoCoreMock = (customMock: DeepPartial<S.Core>) => {
