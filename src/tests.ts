@@ -31,12 +31,12 @@ export const createSyncanoCoreMock = (customMock: DeepPartial<S.Core>) => {
 
 declare module 'sinon' {
   interface SinonStub {
-    dataMethod(methods: DeepPartial<S.DataClass<any>>): typeof methods
+    fn(methods: DeepPartial<S.DataClass<any>>): typeof methods
   }
 }
 
 export const stub: SinonStubStatic = (obj?: any, method?: any) => {
   const result = sinonStub(obj, method)
-  result.dataMethod = (methods: S.DataClass<any>) => () => methods
+  result.fn = (methods: S.DataClass<any>) => () => methods
   return result
 }
