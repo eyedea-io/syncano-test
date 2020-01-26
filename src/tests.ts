@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 import * as S from '@syncano/core'
 process.env.SYNCANO_TEST_RUN_DIR = 'src'
 process.env.SYNCANO_TEST_RUN_EXT = 'ts'
@@ -7,6 +8,7 @@ import {SyncanoTestRun, DeepPartial} from './types'
 
 declare module 'form-data' {}
 
+const {Core} = S
 let stubbed: SinonStub | null = null
 
 const run = SyncanoTest.run as SyncanoTestRun
@@ -16,7 +18,12 @@ export const createSyncanoCoreMock = (customMock: DeepPartial<S.Core>) => {
     stubbed.restore()
   }
 
-  stubbed = stub(S, 'Core' as any).callsFake(() => customMock)
+  stubbed = stub(S, 'Core' as any).callsFake((context: any) => {
+    const syncano = new Core(context)
+    const mock = customMock
+    mock.logger = syncano.logger
+    return mock
+  })
 
   return {'@syncano/core': stubbed}
 }
