@@ -1,60 +1,23 @@
-# @eyedea/syncano
+# @eyedea/syncano-test
 
-Custom wrapper for @syncano/core library.
+Test solution for syncano socket based on @eyedea/syncano.
 
-[![npm version](https://img.shields.io/npm/v/unswitch.svg)](https://www.npmjs.com/package/unswitch)
-[![license](https://img.shields.io/github/license/eyedea-io/syncano.svg)](https://github.com/eyedea-io/syncano/blob/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@eyedea/syncano-test.svg)](https://www.npmjs.com/package/@eyedea/syncano-test)
+[![license](https://img.shields.io/github/license/eyedea-io/syncano-test.svg)](https://github.com/eyedea-io/syncano-test/blob/master/LICENSE)
 
 ## Install
 
 ```
-$ npm install --save @eyedea/syncano
+$ npm install -D @eyedea/syncano-test
 ```
 
 ## Usage
 
-```ts
-import * as S from '@eyedea/syncano'
-
-// Define arguments that endpoint will receive
-interface Args {
-  id: string
-}
-
-class Endpoint extends S.Endpoint<Args> {
-  async run(
-    {data, response /* users, endpoint etc. */}: S.Core, // Access to syncano
-    {args, meta, config}: S.Context<Args> // Access to args, meta and config
-  ) {
-    if (!this.user) {
-      // Errors thrown using S.HttpError are returned as response. In this case:
-      // {message: 'Unauthorized!'} with status code 401
-      throw new S.HttpError('Unauthorized!', 401)
-    }
-
-    // You can directly return syncano query ...
-    return data.post.find(10)
-
-    // ... or use response method
-    response.json({posts}, 200)
-  }
-
-  // Any error thrown in `run` method can be handled using `endpointDidCatch` method
-  endpointDidCatch({message}: Error) {
-    this.syncano.response.json({message}, 400)
-  }
-}
-
-export default ctx => new Endpoint(ctx)
-```
-
-## Tests
-
 ```tsx
-/* syncano/resource/__tests__/get.test.js */
+/* syncano/SOCKET/__tests__/ENDPOINT-NAME.test.js */
 import {run, stub, createSyncanoCoreMock} from '@eyedea/syncano'
 
-describe('resource/create', () => {
+describe('SOCKET/ENDPOINT-NAME', () => {
   it('should not fail', async () => {
     const meta = {
       user: undefined
@@ -79,7 +42,7 @@ describe('resource/create', () => {
       }
     })
 
-    const result = await run('get', {args, meta}, {mocks})
+    const result = await run('ENDPOINT-NAME', {args, meta}, {mocks})
     expect(result).toHaveProperty('code', 401)
   })
 })
