@@ -6,6 +6,8 @@ export type DeepPartial<T> = {
     ? Array<DeepPartial<U>>
     : T[P] extends ReadonlyArray<infer U>
     ? ReadonlyArray<DeepPartial<U>>
+    : T[P] extends () => any
+    ? any
     : DeepPartial<T[P]>
 }
 declare module 'sinon' {

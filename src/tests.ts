@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const merge = require('lodash/merge')
 import * as S from '@syncano/core'
 process.env.SYNCANO_TEST_RUN_DIR = 'src'
 process.env.SYNCANO_TEST_RUN_EXT = 'ts'
@@ -9,7 +7,6 @@ import {SyncanoTestRun, DeepPartial} from './types'
 
 declare module 'form-data' {}
 
-const {Core} = S
 let stubbed: SinonStub | null = null
 
 const run = SyncanoTest.run as SyncanoTestRun
@@ -19,18 +16,7 @@ export const createSyncanoCoreMock = (customMock: DeepPartial<S.Core>) => {
     stubbed.restore()
   }
 
-  stubbed = stub(S, 'Core' as any).callsFake((context: any) => {
-    let syncano = new Core(context)
-
-    syncano = merge(syncano, customMock)
-
-    if (customMock.data) {
-      // Overwrite syncano.data Proxy with object
-      syncano.data = customMock.data as any
-    }
-
-    return syncano
-  })
+  stubbed = stub(S, 'Core' as any).callsFake(() => customMock)
 
   return {'@syncano/core': stubbed}
 }
