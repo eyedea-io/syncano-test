@@ -33,7 +33,7 @@
     "postinstall": "node ./scripts/postinstall.js"
   },
   "peerDependencies": {
-    "@eyedea/syncano": "^0.9.1-alpha.1"
+    "@eyedea/syncano": "^0.10.x"
   },
   "dependencies": {
     "@babel/core": "7.8.3",
