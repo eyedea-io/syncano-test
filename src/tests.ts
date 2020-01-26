@@ -3,7 +3,7 @@ import * as S from '@syncano/core'
 process.env.SYNCANO_TEST_RUN_DIR = 'src'
 process.env.SYNCANO_TEST_RUN_EXT = 'ts'
 import * as SyncanoTest from '@syncano/test'
-import {SinonStub, stub as sinonStub} from 'sinon'
+import {SinonStub, stub as sinonStub, SinonStubStatic} from 'sinon'
 import {SyncanoTestRun, DeepPartial} from './types'
 
 declare module 'form-data' {}
@@ -29,10 +29,14 @@ export const createSyncanoCoreMock = (customMock: DeepPartial<S.Core>) => {
   return {'@syncano/core': stubbed}
 }
 
-export const stub = () => {
-  const result = sinonStub()
-  result.dataMethod = (methods: S.DataClass<any>) => methods
-  return result as ReturnType<typeof sinonStub> & {
+declare module 'sinon' {
+  interface SinonStub {
     dataMethod(methods: DeepPartial<S.DataClass<any>>): typeof methods
   }
+}
+
+export const stub: SinonStubStatic = (obj?: any, method?: any) => {
+  const result = sinonStub(obj, method)
+  result.dataMethod = (methods: S.DataClass<any>) => methods
+  return result
 }
