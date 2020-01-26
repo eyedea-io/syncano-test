@@ -31,7 +31,7 @@ if (appPackage) {
 
 function save() {
   fs.writeFileSync(
-    resolve('package.json'),
+    resolve('../../package.json'),
     JSON.stringify(appPackage, null, 2) + os.EOL
   )
 }
