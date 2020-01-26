@@ -37,6 +37,6 @@ declare module 'sinon' {
 
 export const stub: SinonStubStatic = (obj?: any, method?: any) => {
   const result = sinonStub(obj, method)
-  result.dataMethod = (methods: S.DataClass<any>) => methods
+  result.dataMethod = (methods: S.DataClass<any>) => () => methods
   return result
 }
