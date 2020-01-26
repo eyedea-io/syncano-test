@@ -33,6 +33,6 @@ export const stub = () => {
   const result = sinonStub()
   result.dataMethod = (methods: S.DataClass<any>) => methods
   return result as ReturnType<typeof sinonStub> & {
-    dataMethod: (methods: DeepPartial<S.DataClass<any>>) => typeof methods
+    dataMethod(methods: DeepPartial<S.DataClass<any>>): typeof methods
   }
 }
