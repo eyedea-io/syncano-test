@@ -1,7 +1,7 @@
 const fs = require('fs')
 const os = require('os')
 const {resolve} = require('path')
-const appPackage = require(resolve('../../package.json'))
+const appPackage = require(resolve('../../../package.json'))
 
 if (appPackage) {
   if (
@@ -31,7 +31,7 @@ if (appPackage) {
 
 function save() {
   fs.writeFileSync(
-    resolve('../../package.json'),
+    resolve('../../../package.json'),
     JSON.stringify(appPackage, null, 2) + os.EOL
   )
 }
