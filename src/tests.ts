@@ -22,6 +22,7 @@ export const createSyncanoCoreMock = (customMock: DeepPartial<S.Core>) => {
     const syncano = new Core(context)
     const mock = customMock
     mock.logger = syncano.logger
+    mock.response = syncano.response
     return mock
   })
 
