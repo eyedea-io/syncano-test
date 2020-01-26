@@ -1,2 +1,1 @@
-export {createSyncanoCoreMock, run} from './tests'
-export {stub} from 'sinon'
+export {createSyncanoCoreMock, run, stub} from './tests'
