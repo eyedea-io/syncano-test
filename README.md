@@ -3,7 +3,7 @@
 Test solution for syncano socket based on [@eyedea/syncano](https://github.com/eyedea-io/syncano).
 
 [![npm version](https://img.shields.io/npm/v/@eyedea/syncano-test.svg)](https://www.npmjs.com/package/@eyedea/syncano-test)
-[![license](https://img.shields.io/github/license/eyedea-io/syncano-test.svg)](https://github.com/eyedea-io/syncano-test/blob/master/LICENSE)
+[![license](https://img.shields.io/npm/l/@eyedea/syncano-test)](https://github.com/eyedea-io/syncano-test/blob/master/LICENSE)
 
 ## Install
 
