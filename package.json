@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@babel/core": "7.8.3",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
     "@babel/preset-env": "7.8.3",
     "@babel/preset-typescript": "7.8.3",
     "@syncano/test": "0.15.1-alpha.36",
