@@ -59,7 +59,7 @@
     "@types/node-fetch": "2.5.4",
     "@typescript-eslint/eslint-plugin": "2.17.0",
     "@typescript-eslint/parser": "2.17.0",
-    "codecov": "3.6.2"
+    "codecov": "3.7.1"
   },
   "prettier": {
     "bracketSpacing": false,
